@@ -1,11 +1,11 @@
 import { useParams, Link } from "react-router-dom";
-import hackathon1 from "../assets/hackathon1.jpeg"
-import hackathon2 from "../assets/hackathon2.jpeg"
-import hackathon3 from "../assets/hackathon3.jpeg"
-import hackathon4 from "../assets/hackathon4.jpeg"
-import hackathon5 from "../assets/hackathon5.jpeg"
-import hackathon6 from "../assets/hackathon6.jpeg"
-import hackathon7 from "../assets/hackathon7.jpeg"
+import hackathon1 from "../assets/hackathon1.jpeg";
+import hackathon2 from "../assets/hackathon2.jpeg";
+import hackathon3 from "../assets/hackathon3.jpeg";
+import hackathon4 from "../assets/hackathon4.jpeg";
+import hackathon5 from "../assets/hackathon5.jpeg";
+import hackathon6 from "../assets/hackathon6.jpeg";
+import hackathon7 from "../assets/hackathon7.jpeg";
 
 export default function HackathonDetails() {
   const { id } = useParams();
@@ -17,11 +17,7 @@ export default function HackathonDetails() {
       year: "2026",
       result: "Grand Finalist",
       heroImage: hackathon1,
-      gallery: [
-         hackathon1,
-        hackathon2,
-        hackathon4,
-      ],
+      gallery: [hackathon1, hackathon2, hackathon4],
       overview:
         "This hackathon focused on solving real-world challenges using IoT-based systems. Our team worked on building a practical and scalable prototype within the given time limit.",
       role: [
@@ -41,12 +37,8 @@ export default function HackathonDetails() {
       organization: "WADLA Event",
       year: "2026",
       result: "Active Participant",
-      heroImage:  hackathon5,
-      gallery: [
-        hackathon5,
-        hackathon6,
-        hackathon7,
-      ],
+      heroImage: hackathon5,
+      gallery: [hackathon5, hackathon6, hackathon7],
       overview:
         "Participated in the WADLA Hackathon where the focus was on solving impactful problems through practical product thinking and fast execution.",
       role: [
