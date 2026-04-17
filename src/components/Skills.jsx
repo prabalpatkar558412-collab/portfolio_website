@@ -14,7 +14,7 @@ import {
   SiTailwindcss,
   SiMui,
   SiFirebase,
-  SiSpringboot,
+  
   SiC,
   SiCplusplus,
   SiJavascript,
@@ -36,7 +36,7 @@ const frontendSkills = [
 ];
 
 const backendSkills = [
-  { name: "Spring Boot", icon: <SiSpringboot className="text-green-400" /> },
+  
   { name: "Node JS", icon: <FaNodeJs className="text-green-500" /> },
   { name: "Firebase", icon: <SiFirebase className="text-yellow-400" /> },
 ];
