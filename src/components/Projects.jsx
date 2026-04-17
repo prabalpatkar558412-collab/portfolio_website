@@ -25,8 +25,8 @@ export const allProjectsData = [
     description:
       "Modern responsive website with reusable UI components and smooth animations.",
     tech: ["React.js", "Tailwind CSS", "Framer Motion"],
-    live: "#",
-    code: "https://github.com/prabalpatkar558412-collab/BNV_Assisment_Task",
+    live: "https://digital-marketing-website-7239.vercel.app/",
+    code: "https://github.com/prabalpatkar558412-collab/Digital_Marketing_Website",
   },
   {
     title: "Multipage Grocery Website",

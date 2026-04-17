@@ -7,7 +7,7 @@ function StatusModal({ open, type, message, onClose }) {
   const isSuccess = type === "success";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm">
       <div className="w-full max-w-md rounded-2xl border border-white/10 bg-[#0b1220] p-6 shadow-2xl">
         <div className="flex items-start gap-4">
           <div
@@ -52,7 +52,7 @@ function StatusModal({ open, type, message, onClose }) {
 
           <div className="flex-1">
             <h3 className="text-lg font-semibold text-white">
-              {isSuccess ? "Message Sent" : "Message Not Sent"}
+              {isSuccess ? "Message Sent Successfully" : "Message Failed"}
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-300">
               {message}
@@ -75,7 +75,6 @@ function StatusModal({ open, type, message, onClose }) {
 
 export default function Contact() {
   const form = useRef(null);
-
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState({
     open: false,
@@ -103,16 +102,18 @@ export default function Contact() {
         open: true,
         type: "success",
         message:
-          "Your message has been delivered successfully. Thank you for reaching out — I’ll get back to you as soon as possible.",
+          "Thank you for reaching out. Your message has been sent successfully. I will get back to you as soon as possible.",
       });
 
       form.current.reset();
     } catch (error) {
+      console.error("EmailJS Error:", error);
+
       setModal({
         open: true,
         type: "error",
         message:
-          "We couldn’t send your message at the moment. Please try again in a few minutes or contact us through an alternative method.",
+          "Sorry, your message could not be sent at the moment. Please try again later.",
       });
     } finally {
       setLoading(false);
@@ -121,49 +122,76 @@ export default function Contact() {
 
   return (
     <>
-      <section className="relative overflow-hidden px-4 py-24">
+      <section id="contact" className="relative overflow-hidden px-4 py-24">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(14,165,233,0.12),transparent_30%),radial-gradient(circle_at_bottom,rgba(59,130,246,0.08),transparent_25%),#020617]" />
 
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-6xl">
+          {/* Section Heading */}
+          <div className="mb-14 text-center">
+            <span className="inline-block rounded-full border border-sky-500/20 bg-sky-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+              Contact
+            </span>
+
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+              Let’s Work Together
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+              Have a project idea, internship opportunity, collaboration, or
+              just want to connect? Feel free to send me a message. I’d be
+              happy to hear from you.
+            </p>
+          </div>
+
+          {/* Contact Card */}
           <div className="grid overflow-hidden rounded-3xl border border-slate-800/80 bg-white/5 shadow-[0_25px_80px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl md:grid-cols-[1fr,1.2fr]">
-            {/* Left Info Panel */}
-            <div className="border-b border-slate-800/80 bg-gradient-to-br from-slate-900 to-slate-950 p-8 md:border-b-0 md:border-r">
+            {/* Left Panel */}
+            <div className="border-b border-slate-800/80 bg-gradient-to-br from-slate-900 to-slate-950 p-8 md:border-b-0 md:border-r sm:p-10">
               <span className="inline-flex rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-medium tracking-wide text-sky-300">
-                LET’S CONNECT
+                GET IN TOUCH
               </span>
 
-              <h2 className="mt-6 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Let’s build something remarkable together
-              </h2>
+              <h3 className="mt-6 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                Let’s build something meaningful together
+              </h3>
 
               <p className="mt-4 max-w-md text-sm leading-7 text-slate-400">
-                Whether you have a project idea, a business proposal, or simply
-                want to start a conversation, I’m always open to meaningful and
-                professional collaboration.
+                I’m open to frontend development opportunities, internships,
+                freelance work, project collaborations, and tech discussions.
+                If you have something in mind, feel free to reach out.
               </p>
 
               <div className="mt-10 space-y-5">
-                <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+                <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
                   <p className="text-xs uppercase tracking-wide text-slate-500">
                     Response Time
                   </p>
-                  <p className="mt-1 text-sm font-medium text-slate-200">
+                  <p className="mt-2 text-sm font-medium text-slate-200">
                     Usually within 24 hours
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+                <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
                   <p className="text-xs uppercase tracking-wide text-slate-500">
-                    Best For
+                    Available For
                   </p>
-                  <p className="mt-1 text-sm font-medium text-slate-200">
-                    Freelance work, collaborations, consulting, and inquiries
+                  <p className="mt-2 text-sm font-medium leading-6 text-slate-200">
+                    Frontend projects, internships, collaborations, and freelance work
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+                  <p className="text-xs uppercase tracking-wide text-slate-500">
+                    Communication
+                  </p>
+                  <p className="mt-2 text-sm font-medium leading-6 text-slate-200">
+                    Clear, professional, and project-focused conversations
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Right Form */}
+            {/* Right Form Panel */}
             <div className="bg-[#0b1120]/95 p-8 sm:p-10">
               <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div className="grid gap-6 sm:grid-cols-2">
@@ -215,23 +243,22 @@ export default function Contact() {
                     name="message"
                     rows="6"
                     required
-                    placeholder="Tell me a little about your project or inquiry..."
+                    placeholder="Tell me about your project, opportunity, or message..."
                     className="w-full resize-none rounded-2xl border border-slate-700 bg-slate-900/70 px-4 py-3.5 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20"
                   />
                 </div>
 
                 <div className="flex flex-col items-start justify-between gap-4 border-t border-slate-800 pt-4 sm:flex-row sm:items-center">
                   <p className="text-xs leading-6 text-slate-500">
-                    By submitting this form, you agree to be contacted regarding
-                    your inquiry.
+                    Your information will only be used to respond to your message.
                   </p>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="inline-flex min-w-[160px] items-center justify-center rounded-2xl bg-sky-600 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-sky-500 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="inline-flex min-w-[170px] items-center justify-center rounded-2xl bg-sky-600 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-sky-500 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {loading ? "Sending Message..." : "Send Message"}
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
                 </div>
               </form>
