@@ -1,11 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import profileimage from "../assets/profile.jpeg";
-import cv from "../assets/cv.pdf"
+import profileimage from "../assets/portfolio4.png";
+// import cv from "../assets/cv.pdf"
 
 const roles = [
   "I am Developer",
-  "I am Frontend Developer",
+  "I am Mern Stack Developer",
   "I build modern UI",
 ];
 
@@ -152,7 +152,7 @@ export default function Hero() {
           >
             Hi, I’m{" "}
             <span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">
-              Prabal Patkar
+              Mohammad Usman
             </span>
           </motion.h1>
 
@@ -180,7 +180,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55, duration: 0.7 }}
           >
-            <motion.a
+            {/* <motion.a
               href={cv}
               download="Resume.pdf"
               whileHover={{ scale: 1.05 }}
@@ -188,7 +188,7 @@ export default function Hero() {
               className="inline-flex w-full items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition hover:bg-sky-400 sm:w-auto"
             >
               Download CV
-            </motion.a>
+            </motion.a> */}
 
             <motion.a
               href="#projects"

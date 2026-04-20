@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo / Name */}
           <h2 className="text-lg font-semibold text-white">
             <span className="text-sky-400">&lt;</span>
-            Prabal<span className="text-slate-400">/</span>Patkar
+            Mohammad<span className="text-slate-400">/</span>Usman
             <span className="text-sky-400">&gt;</span>
           </h2>
 

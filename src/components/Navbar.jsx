@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Skills", href: "#skills" },
-    { name: "Achievements", href: "#achievement" },
+    // { name: "Achievements", href: "#achievement" },
     { name: "Projects", href: "#projects" },
     { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
@@ -32,7 +32,7 @@ export default function Navbar() {
           className="text-xl font-bold tracking-tight text-white sm:text-2xl"
         >
           <span className="text-sky-400">&lt;</span>
-          Prabal<span className="text-slate-400">/</span>Patkar
+          Mohammad<span className="text-slate-400">/</span>Usman
           <span className="text-sky-400">&gt;</span>
         </a>
 

@@ -4,8 +4,8 @@ import { GraduationCap, School, CalendarDays, Award } from "lucide-react";
 const educationData = [
   {
     degree: "B.Tech in Computer Engineering",
-    institution: "Gyan Ganga College of Technology, Jabalpur",
-    duration: "2024 - 2028 (Expected)",
+    institution: "LNCT UNIVERSITY, BHOPAL",
+    duration: "2024 - 2027 (Expected)",
     grade: "",
     status: "Currently Pursuing",
     description:
@@ -19,8 +19,8 @@ const educationData = [
   },
   {
     degree: "Higher Secondary (12th)",
-    institution: "Anamika Convent Higher Secondary School",
-    duration: "2022 - 2023",
+    institution: "KAPIL GANGA PUBLIC SCHOOL",
+    duration: "2022 - 2024",
     grade: "86.4%",
     status: "Completed",
     description:
